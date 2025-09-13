@@ -44,13 +44,13 @@ func main() {
 }
 
 func solvePart1(numbers []int) {
-	incr := 0
+	increases := 0
 	for i := 1; i < len(numbers); i++ {
 		if numbers[i] > numbers[i-1] {
-			incr++
+			increases++
 		}
 	}
-	fmt.Println("Answer:", incr)
+	fmt.Println("Answer:", increases)
 }
 
 func solvePart2(numbers []int) {
