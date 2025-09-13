@@ -11,20 +11,12 @@ def main():
     if len(sys.argv) > 2:
         filename = sys.argv[2]
     
-    try:
-        with open(filename, 'r') as f:
-            lines = f.read().strip().split('\n')
-    except Exception as e:
-        print(f"Error reading file {filename}: {e}")
-        return
+    with open(filename, 'r') as f:
+        lines = f.read().strip().split('\n')
     
     print(f"Input data length: {len(lines)} lines")
     
-    try:
-        numbers = [int(line) for line in lines]
-    except ValueError as e:
-        print(f"Error parsing numbers: {e}")
-        return
+    numbers = [int(line) for line in lines]
     
     if part == "1":
         solve_part1(numbers)
