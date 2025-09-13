@@ -55,8 +55,8 @@ func solvePart1(numbers []int) {
 
 func solvePart2(numbers []int) {
 	slidingWindowSums := make([]int, len(numbers)-2)
-	for i := 3; i <= len(numbers); i++ {
-		slidingWindowSums[i-3] = numbers[i-3] + numbers[i-2] + numbers[i-1]
+	for i := 0; i < len(numbers)-2; i++ {
+		slidingWindowSums[i] = numbers[i] + numbers[i+1] + numbers[i+2]
 	}
 	solvePart1(slidingWindowSums)
 }
